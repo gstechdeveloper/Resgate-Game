@@ -50,6 +50,7 @@ function start() { // Inicio da função start()
         moveinimigo1(velocidade,posicaoY);
         moveinimigo2();
         moveamigo();
+        colisao();
 	
 	}
 
@@ -61,6 +62,14 @@ function movefundo() {
 	$("#fundoGame").css("background-position",esquerda-1);
 	
 } // fim da função movefundo()
+
+function colisao() {
+	var colisao1 = ($("#jogador").collision($("#inimigo1")));
+	// jogador com o inimigo1
+
+	console.log(colisao1);
+
+}
 
 function movejogador(jogo, TECLA) {
     
