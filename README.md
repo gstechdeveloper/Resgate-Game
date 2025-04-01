@@ -6,6 +6,8 @@ O objetivo desse jogo é você salvar o fugitivo quantas vezes você conseguir. 
 
 Boa sorte!
 
+Jogue agora mesmo: [https://gstechdeveloper.github.io/resgate_game/](https://gstechdeveloper.github.io/resgate_game/)
+
 
 
 #  Tecnologias utilizadas :man_technologist:
