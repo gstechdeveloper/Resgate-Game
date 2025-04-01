@@ -23,3 +23,10 @@ Boa sorte!
 📛 Nome do desenvolvedor: Gabriel Azevedo
 
 📞 WhatsApp: [(31) 98237-8440](http://wa.me/5531982378440)
+
+
+
+![image](https://github.com/user-attachments/assets/20f91a62-b67b-4abf-bc18-c7cdf675b924)
+
+![image](https://github.com/user-attachments/assets/ccff0e39-46ef-413e-b884-a5ff75702afc)
+
