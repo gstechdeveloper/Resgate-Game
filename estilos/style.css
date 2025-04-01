@@ -29,11 +29,31 @@ body{
     -o-animation: play .5s steps(2) infinite;
 }
 
+#explosao1 {
+	width:15px;
+	height:87px;
+	position:absolute;
+
+}
+
+#explosao2 {
+	width:15px;
+	height:87px;
+	position:absolute;
+	
+}
+
 #disparo {
 	width: 50px;
 	height: 8px;
 	position: absolute;
 	background-image: url(../imgs/disparo.png);
+}
+
+#explosao3 {
+	width:44px;
+	height:51px;
+	position:absolute;
 }
 
 
