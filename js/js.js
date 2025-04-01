@@ -11,6 +11,7 @@ var somGameover=document.getElementById("somGameover");
 var somPerdido=document.getElementById("somPerdido");
 var somResgate=document.getElementById("somResgate");
 var jogo = {}
+var posicaoY = parseInt(Math.random() * 334);
 	
 
 function start() { // Inicio da função start()
@@ -38,7 +39,6 @@ function start() { // Inicio da função start()
     jogo.pressionou = [];
     
     var velocidade=5;
-    var posicaoY = parseInt(Math.random() * 334);
 	//Game Loop
 
 	jogo.timer = setInterval(loop,30);
@@ -109,7 +109,7 @@ function start() { // Inicio da função start()
             somExplosao.play();
 
                 
-            velocidade=velocidade+0.3;
+            velocidade=velocidade+0.2;
             pontos=pontos+100;
                 
             inimigo1X = parseInt($("#inimigo1").css("left"));
@@ -132,7 +132,7 @@ function start() { // Inicio da função start()
             somExplosao.play();
 
 
-            velocidade=velocidade+0.1;
+            velocidade=velocidade+0.2;
 
             pontos=pontos+50;
                 
@@ -176,6 +176,10 @@ function colisao() {
 
 }
 
+function gerarY(){
+    posicaoY= parseInt(Math.random() * 334);
+}
+
 function movejogador(jogo, TECLA) {
     
 	
@@ -214,10 +218,10 @@ function moveinimigo1(velocidade,posicaoY) {
 	$("#inimigo1").css("top",posicaoY);
 		
 		if (posicaoX<=0) {
-		posicaoY = parseInt(Math.random() * 334);
-		$("#inimigo1").css("left",694);
-		$("#inimigo1").css("top",posicaoY);
-			
+            gerarY()
+            $("#inimigo1").css("left",694);
+            $("#inimigo1").css("top",posicaoY);
+            console.log($("#inimigo1").css("top"))
 		}
 }
 
@@ -450,7 +454,7 @@ function gameOver() {
 	
 	$("#fundoGame").append("<div id='fim'></div>");
 	
-	$("#fim").html("<h1> Game Over </h1><p>Sua pontuação foi: " + pontos + "</p>" + "<div id='reinicia' onClick=reiniciaJogo()><h3>Jogar Novamente</h3></div>");
+	$("#fim").html("<h1 style='padding-top: 20px; padding-bottom: 30px;'> Game Over </h1><p>Sua pontuação foi: " + pontos + "</p>" + "<div id='reinicia' onClick=reiniciaJogo() style='padding-top: 30px; padding-bottom: 20px;'><h3>Jogar Novamente</h3></div>");
 } // Fim da função gameOver();
 
 function reiniciaJogo() {
