@@ -3,6 +3,7 @@ var fimdejogo=false;
 var pontos=0;
 var salvos=0;
 var perdidos=0;
+var energiaAtual=3;
 	
 
 function start() { // Inicio da função start()
@@ -14,6 +15,8 @@ function start() { // Inicio da função start()
 	$("#fundoGame").append("<div id='inimigo2'></div>");
 	$("#fundoGame").append("<div id='amigo'></div>");
     $("#fundoGame").append("<div id='placar'></div>");
+    $("#fundoGame").append("<div id='energia'></div>");
+
 
     $("#jogador").addClass("anima1")
     $("#inimigo1").addClass("anima1")
@@ -62,6 +65,8 @@ function start() { // Inicio da função start()
         moveinimigo2();
         moveamigo();
         colisao();
+        energia();
+
         // jogador com o inimigo2 
         if (colisao2.length>0) {
             
@@ -72,6 +77,7 @@ function start() { // Inicio da função start()
             $("#inimigo2").remove();
                 
             reposicionaInimigo2();
+            energiaAtual--;
                 
         }
 
@@ -92,6 +98,7 @@ function start() { // Inicio da função start()
                 
         if (colisao3.length>0) {
                 
+            velocidade=velocidade+0.3;
             pontos=pontos+100;
                 
             inimigo1X = parseInt($("#inimigo1").css("left"));
@@ -111,6 +118,8 @@ function start() { // Inicio da função start()
         // Disparo com o inimigo2
                 
         if (colisao4.length>0) {
+
+            velocidade=velocidade+0.1;
 
             pontos=pontos+50;
                 
@@ -270,6 +279,7 @@ function colisao() {
     posicaoY = parseInt(Math.random() * 334);
     $("#inimigo1").css("left",694);
     $("#inimigo1").css("top",posicaoY);
+    energiaAtual--;
     }
     
 } //Fim da função colisao()
@@ -382,6 +392,32 @@ function placar() {
 	$("#placar").html("<h2> Pontos: " + pontos + " Salvos: " + salvos + " Perdidos: " + perdidos + "</h2>");
 	
 } //fim da função placar()
+
+function energia() {
+	
+    if (energiaAtual==3) {
+        
+        $("#energia").css("background-image", "url(imgs/energia3.png)");
+    }
+
+    if (energiaAtual==2) {
+        
+        $("#energia").css("background-image", "url(imgs/energia2.png)");
+    }
+
+    if (energiaAtual==1) {
+        
+        $("#energia").css("background-image", "url(imgs/energia1.png)");
+    }
+
+    if (energiaAtual==0) {
+        
+        $("#energia").css("background-image", "url(imgs/energia0.png)");
+        
+        //Game Over
+    }
+
+}
 
     
     

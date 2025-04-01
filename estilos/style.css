@@ -14,6 +14,15 @@ h1 {
 	color:#603A03;
 }
 
+#energia {
+	width: 140px;
+	height: 38px;
+	position: absolute;
+	left: 750px;
+	top: 7px;	
+}
+
+
 body{
     background-image: url('../imgs/fundo.jpg');
     background-repeat: repeat;
