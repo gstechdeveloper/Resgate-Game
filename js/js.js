@@ -20,14 +20,17 @@ function start() { // Inicio da função start()
         }
     
     jogo.pressionou = [];
-
     
+    var velocidade=5;
+    var posicaoY = parseInt(Math.random() * 334);
 	
 	//Game Loop
 
 	jogo.timer = setInterval(loop,30);
 	
 	function loop() {
+       
+        
         movefundo();
         //Verifica se o usuário pressionou alguma tecla	
 	
@@ -42,6 +45,9 @@ function start() { // Inicio da função start()
 
 
         movejogador(jogo,TECLA);
+        moveinimigo1(velocidade,posicaoY);
+        
+
     
 	
 	}
@@ -86,4 +92,18 @@ function movejogador(jogo, TECLA) {
     }
 
 } // fim da função movejogador()
+
+function moveinimigo1(velocidade,posicaoY) {
+
+	posicaoX = parseInt($("#inimigo1").css("left"));
+	$("#inimigo1").css("left",posicaoX-velocidade);
+	$("#inimigo1").css("top",posicaoY);
+		
+		if (posicaoX<=0) {
+		posicaoY = parseInt(Math.random() * 334);
+		$("#inimigo1").css("left",694);
+		$("#inimigo1").css("top",posicaoY);
+			
+		}
+}
 
